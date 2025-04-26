@@ -1,0 +1,13 @@
+spring:
+ datasource:
+   driver-class-name: com.mysql.jdbc.Driver
+   username: root
+   password: root
+   url: jdbc:mysql://localhost:3306/campus_trade?useUnicode=true&characterEncoding=utf8
+server:
+  port: 8080
+
+custom:
+  avatar:
+    upload-dir: D:/毕业设计/李文栋/upload/avatars  # 默认用户目录下的uploads/avatars
+    access-path: /avatars/**                   # 对外访问路径
