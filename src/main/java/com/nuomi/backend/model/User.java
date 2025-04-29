@@ -16,9 +16,9 @@ public class User {
     private String password;
     private String email;
     private String phone;
-    private String avatar;
+    private String avatarUrl;
     private Date createTime;
     private Date updateTime;
-    private String nickName;
-    private int is_verified;
+    private String nickname;
+    private int isVerified;
 }

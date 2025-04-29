@@ -11,7 +11,7 @@ import java.util.List;
 public interface ProductMapper extends BaseMapper<Product> {
     @Select("""
         SELECT 
-            p.product_name, p.product_price,p.product_title,p.product_main_img,p.product_description,p.wants,
+            p.product_id, p.product_name, p.product_price,p.product_title,p.product_main_img,p.product_description,p.wants,
             c.category_name AS category_name,
             u.is_verified AS is_verified,
             u.nickname AS nickname,

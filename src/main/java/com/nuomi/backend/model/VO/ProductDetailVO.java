@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 @Data
 public class ProductDetailVO {
     // 商品基础信息
-//    private Integer productId;
+    private Integer productId;
     private String productName;
     private String productTitle;
     private BigDecimal productPrice;

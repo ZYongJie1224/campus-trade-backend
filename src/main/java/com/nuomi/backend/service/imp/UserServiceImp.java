@@ -23,16 +23,13 @@ public class UserServiceImp implements UserService {
     public User login(String username, String password) {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("username", username);
-//        queryWrapper.eq("password", password);
         List<User> users = userMapper.selectList(queryWrapper);
-        if (users.size() > 0) {
-            if (users.get(0).getPassword().equals(password)) {
-                return users.get(0);
-            }else return null;
-        }else {
-            return null;
+        if (!users.isEmpty() && users.get(0).getPassword().equals(password)) {
+            return users.get(0);
         }
+        return null;
     }
+
 
     @Override
     public boolean upAdavatar(MultipartFile file, int userId) throws IOException {
@@ -45,5 +42,9 @@ public class UserServiceImp implements UserService {
         }else{
             return false;
         }
+    }
+    @Override
+    public User getById(Long userId) {
+        return userMapper.selectById(userId);
     }
 }
