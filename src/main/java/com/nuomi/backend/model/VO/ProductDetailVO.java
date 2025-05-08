@@ -26,4 +26,5 @@ public class ProductDetailVO {
     private String avatarUrl;
     private int isVerified;
 //    private String creatorEmail;
+    private int isSold;
 }

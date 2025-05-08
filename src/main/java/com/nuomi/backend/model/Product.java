@@ -2,6 +2,7 @@ package com.nuomi.backend.model;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -38,10 +39,20 @@ public class Product {
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 
-    @TableLogic
+//    @TableLogic
     @TableField("delete_time")
     private LocalDateTime deleteTime;
 
     @TableField("category_id")
     private Integer categoryId;
+
+    @TableField("product_description")
+    private String productDescription;
+
+
+    @TableField("is_sold")
+    private Integer isSold;
+
+    @TableField("is_locked")
+    private Integer isLocked;
 }
