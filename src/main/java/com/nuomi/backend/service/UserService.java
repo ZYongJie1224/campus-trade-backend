@@ -22,6 +22,7 @@ public interface UserService {
      * @param userId 用户ID
      * @return 是否成功
      */
-    boolean upAdavatar(MultipartFile file, int userId) throws IOException;
+    boolean upAdavatar(MultipartFile file, long userId) throws IOException;
     User getById(Long userId);
+    boolean register(User user);
 }

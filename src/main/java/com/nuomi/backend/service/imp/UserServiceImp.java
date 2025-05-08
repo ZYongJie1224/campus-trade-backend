@@ -30,9 +30,8 @@ public class UserServiceImp implements UserService {
         return null;
     }
 
-
     @Override
-    public boolean upAdavatar(MultipartFile file, int userId) throws IOException {
+    public boolean upAdavatar(MultipartFile file, long userId) throws IOException {
         String fileName = userId + "_avatar" + fileStorageService.getFileExtension(file.getOriginalFilename());
         //更新数据库adavtarurl字段
         int col = userMapper.update(null, new UpdateWrapper<User>().eq("user_id", userId).set("avatar", fileName).set("update_time", new Date())); // 同时更新修改时间
@@ -43,8 +42,19 @@ public class UserServiceImp implements UserService {
             return false;
         }
     }
+
     @Override
     public User getById(Long userId) {
         return userMapper.selectById(userId);
+    }
+
+    @Override
+    public boolean register(User user) {
+        int col = userMapper.insert(user);
+        if (col > 0) {
+            return true;
+        }else{
+            return false;
+        }
     }
 }
