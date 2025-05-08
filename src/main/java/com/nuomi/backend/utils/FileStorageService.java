@@ -13,7 +13,7 @@ public class FileStorageService {
     private String uploadDir;
 
     // 存储文件并返回访问路径
-    public boolean storeAdavtar(MultipartFile file, int userId) throws IOException {
+    public boolean storeAdavtar(MultipartFile file, long userId) throws IOException {
         // 确保目录存在
         Path dir = Paths.get(uploadDir);
         if (!Files.exists(dir)) {
